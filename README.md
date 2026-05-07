@@ -20,7 +20,14 @@ The application includes advanced features such as task filtering, drag & drop r
 * Automatic sorting (completed tasks moved down)
 
 ---
+## File Tree
 
+```
+├── 🌐 index.html
+├── 📄 script.js
+└── 🎨 style.css
+```
+---
 ### 🔎 Search System
 
 * Real-time task search
