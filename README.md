@@ -140,3 +140,9 @@ Developed as a front-end practice project focused on:
 * State management
 * UI/UX design
 
+---
+### 📌 Copyright
+
+© 2026 Amenallah. All rights reserved.  
+This project is created for educational and portfolio purposes.
+
