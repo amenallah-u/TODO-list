@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy"
+content="
+default-src 'self';
+style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline';
+font-src 'self' https://cdnjs.cloudflare.com;
+script-src 'self' 'unsafe-inline';
+">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<title>Todo List - TP JS</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="dark_mode">
+    <i class="fa-solid fa-moon"></i>
+</div>
+<div class="container">
+    <h1><i class="fa-solid fa-file-pen"></i> Ma Todo List</h1>
+
+    <div class="add-task">
+        <input type="text" id="taskInput" placeholder="Nouvelle tâche...">
+        <button id="addBtn"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <div class="search">
+        <input type="text" id="searchBar" placeholder="Rechercher une tâche...">
+        <button id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <ul id="taskList">
+    </ul>
+
+    <div class="stats">
+        Tâches restantes : <span id="remainingCount">0</span>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

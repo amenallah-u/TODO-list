@@ -1,0 +1,183 @@
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #f4f4f4;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.add-task, .search {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskInput, #searchBar {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: grab;
+     transition: transform 0.15s ease, opacity 0.15s ease;
+    border-radius: 8px;
+    animation: pop 0.2s ease-in-out;
+}
+li.dragging{
+    opacity: 0.85;
+    transform: scale(1.01);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    cursor: grabbing;
+}
+
+@keyframes pop{
+    from{
+        transform: scale(0.95);
+        opacity: 0.5;
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+.task-text {
+    flex: 1;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+.delete-btn {
+    background: #dc3545;
+    padding: 5px 10px;
+    width:50px;
+    height:35px;
+     
+}
+
+.delete-btn:hover {
+    background: #c82333;
+}
+
+.stats {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.actions{
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+/* text takes remaining space */
+li span{
+    flex: 1;
+}
+/*==================
+ Dark Mode Styles
+ =================== */
+.dark-mode{
+    background:#0f172a;
+    color:#e5e7eb;
+}
+
+.dark-mode .container{
+    background:#1e293b;
+    border-color:#334155;
+}
+.dark-mode button {
+    background: #17a2b8;
+}
+.dark-mode button:hover {
+    background: #138496;
+}
+.dark-mode .delete-btn {
+    background: #c82333;
+}
+.dark-mode .delete-btn:hover {
+    background: #bd2130;
+}
+.dark-mode .stats {
+    color: #ccc;
+}
+.dark-mode .task-text {
+    color: #ccc;
+}
+#dark_mode {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1000;
+}
+.dark-mode #dark_mode i {
+    color: #f4f4f4;
+}
+.dark-mode #dark_mode i:hover {
+    color: #ccc;
+}
+.dark-mode #dark_mode i {
+    color: #f4f4f4;
+}
+.dark-mode h1 {
+    color: #f4f4f4;
+}
+.dark-mode #taskInput, .dark-mode #searchBar {
+    background: #555;
+    color: #f4f4f4;
+    border: 1px solid #666;
+}
+.dark-mode #taskInput::placeholder, .dark-mode #searchBar::placeholder {
+    color: #ccc;
+}
+.dark-mode li {
+    border-bottom: 1px solid #555;
+}
+input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+}
