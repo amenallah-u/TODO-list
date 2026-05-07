@@ -141,8 +141,8 @@ Developed as a front-end practice project focused on:
 * UI/UX design
 
 ---
-### 📌 Copyright
+## 📌 Copyright
 
-© 2026 Amenallah. All rights reserved.  
+© 2026 Amenallah Aoiadi. All rights reserved.  
 This project is created for educational and portfolio purposes.
 
