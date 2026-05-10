@@ -20,6 +20,15 @@ The application includes advanced features such as task filtering, drag & drop r
 * Automatic sorting (completed tasks moved down)
 
 ---
+
+### 🎨 Style Customization
+
+* Change task font family dynamically
+* Change text color of tasks
+* Personalize UI appearance based on user preference
+* Improves readability and user experience
+
+---
 ## File Tree
 
 ```
@@ -108,12 +117,11 @@ This allows full persistence between sessions.
 ---
 
 ## 🎨 UI/UX Highlights
-
 * Clean and modern interface
-* Smooth animations on drag and interactions
-* Responsive layout
-* Intuitive controls
-* Minimalistic design with dark mode support
+* Smooth drag & drop animations
+* Responsive design
+* Dark mode support
+* Customizable font and text colors for better personalization
 
 ---
 
