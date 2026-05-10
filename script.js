@@ -29,6 +29,8 @@ function render(){
         checkbox.checked=tasks[i].completed;
 
         span.textContent=tasks[i].text;
+        span.style.color = tasks[i].color;
+        span.style.fontFamily = tasks[i].font;
 
         if(checkbox.checked){
             span.classList.toggle('completed');
@@ -74,7 +76,9 @@ function addTask(){
     let task={
         id: crypto.randomUUID(),
         text:input.value,
-        completed:false
+        completed:false,
+        color: input.style.color || '#000000',
+        font: input.style.fontFamily || 'default',
     }
     if(task.text!==''){
         tasks.push(task);
@@ -206,29 +210,57 @@ function loadDarkMode(){
         darkModeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
     }
 }
+
+/* =========================
+  color picker
+========================= */
+let colorPicker=document.getElementById('colorPicker');
+
+function colored() {
+    let selectedColor = this.value;
+    input.style.color = selectedColor;
+};
+colorPicker.addEventListener('input', colored);
+/* =========================
+  font picker
+========================= */
+let fontPicker=document.getElementById('fontPicker');
+function changeFont() {
+    let selectedFont = this.value;
+    if (selectedFont === 'default') {
+        input.style.fontFamily = '';
+    } else {
+        input.style.fontFamily = selectedFont;
+    }
+}
+fontPicker.addEventListener('change', changeFont);
 /* =========================
    drag and drop
 ========================= */
+let draggedTask = null;
 function dragStart(){
     draggedTask = this;
     this.classList.add("dragging");
 }
+
 function dragEnd(){
     this.classList.remove("dragging");
 }
+
 function dragOver(e){
     e.preventDefault();
 }
-function drop(){
 
+function drop(){
     if(draggedTask !== this){
 
-        let draggedId = Number(draggedTask.dataset.id);
-        let targetId = Number(this.dataset.id);
+        let draggedId = draggedTask.dataset.id;
+        let targetId = this.dataset.id;
 
         let draggedIndex = tasks.findIndex(t => t.id === draggedId);
         let targetIndex = tasks.findIndex(t => t.id === targetId);
 
+        // swap
         [tasks[draggedIndex], tasks[targetIndex]] =
         [tasks[targetIndex], tasks[draggedIndex]];
 
@@ -239,5 +271,3 @@ window.onload=function(){
     loadTasks();
     loadDarkMode()
 }
-
-
